@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:GitHubUsers.ViewModels"
+             x:DataType="viewModels:LoginViewModel"
+             x:Class="GitHubUsers.Views.LoginPage"
+             Title="Login" 
+             NavigationPage.HasNavigationBar="False"               
+             BackgroundColor="WhiteSmoke">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="300">            
+            <Entry Text="{Binding Login, Mode=TwoWay}" Placeholder="login"/>
+            <Entry Text="{Binding Password, Mode=TwoWay}" Placeholder="password" IsPassword="True"/>
+            <Button Text="enter" Command="{Binding EnterCommand, Mode=OneWay}"/>
+            <Label Text="login and/or password invalid" TextColor="Red" HorizontalTextAlignment="Center" IsVisible="{Binding IsInvalid, Mode=OneWay}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
